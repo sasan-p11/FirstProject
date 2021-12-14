@@ -17,3 +17,10 @@ C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.p
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\log4net.dll
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\log4net.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.exe.licenses
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControls.GridView.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControls.GridView.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\log4net.config
