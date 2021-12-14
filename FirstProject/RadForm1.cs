@@ -1,19 +1,14 @@
-﻿using Microsoft.VisualBasic.Logging;
+﻿
+using SimpleHttp;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Reflection;
-using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
-using Telerik.WinControls;
-using Telerik.WinControls.UI;
 
 namespace FirstProject
 {
@@ -23,21 +18,21 @@ namespace FirstProject
      = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public RadForm1()
         {
+            RestoreData();
             InitializeComponent();
         }
         private void RadForm1_Load(object sender, EventArgs e)
         {
+            log.Info("RadForm1_load is run!!!");
             PracticeEntities entities = new PracticeEntities();
             var users = entities.User.Select(c => c).ToList();
-            var loginUser = entities.Login.Select(c => c).ToList();
-            
-            DataGridViewRow row = new DataGridViewRow();
-            for (int i = 0; i < users.Count ; i++)
-            {
-                dataGridView2.Rows.Add(users[i].UserId, users[i].Gender, users[i].FirstName, users[i].Family, users[i].Age, 
-                                                users[i].RegisterDate,loginUser[i].UserName, loginUser[i].Password);
-            }
 
+            DataGridViewRow row = new DataGridViewRow();
+            foreach(var item in users)
+            {
+                dataGridView2.Rows.Add(item.UserId, item.Gender, item.FirstName, item.Family, item.Age,
+                                               item.RegisterDate, item.Login.UserName, item.Login.Password);
+            }
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -50,5 +45,32 @@ namespace FirstProject
             log.Info("Hello logging world!");
             log.Error("Hello logging world!");
         }
-    }
+
+        private void RestoreData()
+        {
+            PracticeEntities entities = new PracticeEntities();
+            HttpServer.ListenAsync(8000, CancellationToken.None, Route.OnHttpRequestAsync);
+
+            Route.Add("/myForm/", (rq, rp, args) =>
+            {
+                log.Info("get user with id is run");
+
+                var files = rq.ParseBody(args);
+                 
+                var IsConvert = int.TryParse(args["id"],out int id);
+
+                if(IsConvert)
+                {
+                    var user = entities.User.Find(id); 
+                    string str = " " + user.UserId + " , " + user.Gender + " , " + user.FirstName 
+                                    + " , " + " , " + user.Family + " , " + " , " + user.RegisterDate+" , "+user.Age+" , "+
+                                    user.Login.UserName+" , "+user.Login.Password;
+                    rp.AsText(str);
+                }
+                   
+
+            });
+        }
+
+    }   
 }

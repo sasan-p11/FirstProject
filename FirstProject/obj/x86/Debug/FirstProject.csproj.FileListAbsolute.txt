@@ -24,3 +24,8 @@ C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.Sq
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\log4net.config
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\MimeTypesMap.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\SimpleHTTP.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\SimpleHTTP.xml
