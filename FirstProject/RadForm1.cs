@@ -1,5 +1,6 @@
 ﻿
 using SimpleHttp;
+using Spire.Xls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -183,13 +184,13 @@ namespace FirstProject
 
             log.Info("Filter with gender is run");
 
-            if(rdoFilterRegsiterDate.IsChecked)
+            if (rdoFilterRegsiterDate.IsChecked)
             {
                 var user = new List<User>();
                 try
                 {
-                    user = entities.Users.Select(c=>c).OrderBy(x=>x.RegisterDate).ToList();
-        
+                    user = entities.Users.Select(c => c).OrderBy(x => x.RegisterDate).ToList();
+
                 }
                 catch (Exception ex)
                 {
@@ -329,6 +330,61 @@ namespace FirstProject
             }
         }
 
+        private void btnExpotExcel_Click(object sender, EventArgs e)
+        {
+            Workbook book = new Workbook();
+            if (File.Exists(@"C:\Users\mahrayan\Desktop\Report.xlsx"))
+            {
+                book.LoadFromFile(@"C:\Users\mahrayan\Desktop\Report.xlsx");
+            }
+            Worksheet sheet = book.Worksheets["Exported from gridview"];
+            if (sheet == null)
+            {
+                sheet = book.CreateEmptySheet("Exported from gridview");
+            }
+            //Convert data from datagridview to datatable
+            DataTable dt = GetDgvToTable(dataGridView2);
+            //Export datatable to excel
+            int startRow = sheet.LastRow + 2;
+            if (startRow > 60000)
+            {
+                startRow = 1;
+            }
+            sheet.InsertDataTable(dt, true, startRow, 1, -1, -1);
+            sheet.Range[1, 1, sheet.LastRow, sheet.LastColumn].AutoFitColumns();
+            sheet.AllocatedRange.BorderAround(LineStyleType.Thin, borderColor: ExcelColors.Black);
+            sheet.AllocatedRange.BorderInside(LineStyleType.Thin, borderColor: ExcelColors.Black);
+            book.SaveToFile(@"C:\Users\mahrayan\Desktop\Report.xlsx", ExcelVersion.Version2013);
+            book.Dispose();
+            MessageBox.Show("Export complete");
+        }
+        public DataTable GetDgvToTable(DataGridView dgv)
+        {
+            DataTable dt = new DataTable();
+
+            //Column
+            for (int count = 0; count < dgv.Columns.Count; count++)
+            {
+                DataColumn dc = new DataColumn(dgv.Columns[count].Name.ToString());
+                dt.Columns.Add(dc);
+            }
+
+            //Row
+            for (int count = 0; count < dgv.Rows.Count; count++)
+            {
+                DataRow dr = dt.NewRow();
+                for (int countsub = 0; countsub < dgv.Columns.Count; countsub++)
+               // for (int countsub = 0; countsub < dgv.Rows.Count; countsub++)
+                {
+                    dr[countsub] = Convert.ToString(dgv.Rows[count].Cells[countsub].Value);
+                }
+                dt.Rows.Add(dr);
+            }
+            decimal total = dataGridView2.SelectedRows.OfType<DataGridViewRow>()
+                .Sum(t => Convert.ToDecimal(t.Cells[2].Value));
+            dt.Rows.Add(total);
+            return dt;
+        }
         //private void CreateFileLog()
         //{
         //    XmlDocument log4netConfig = new XmlDocument();

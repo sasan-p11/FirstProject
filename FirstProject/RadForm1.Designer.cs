@@ -46,21 +46,22 @@ namespace FirstProject
             this.lblFilterAge = new Telerik.WinControls.UI.RadLabel();
             this.tabRegisterUser = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.rdoFilterRegsiterDate = new Telerik.WinControls.UI.RadRadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txtFirstName = new Telerik.WinControls.UI.RadTextBox();
-            this.lblFirstName = new Telerik.WinControls.UI.RadLabel();
-            this.txtFamily = new Telerik.WinControls.UI.RadTextBox();
-            this.lblFamily = new Telerik.WinControls.UI.RadLabel();
-            this.txtAge = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
-            this.txtGenderRegister = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
-            this.txtUserNameRegister = new Telerik.WinControls.UI.RadTextBox();
-            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.btnRegister = new Telerik.WinControls.UI.RadButton();
             this.txtPasswordRegister = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
-            this.btnRegister = new Telerik.WinControls.UI.RadButton();
-            this.rdoFilterRegsiterDate = new Telerik.WinControls.UI.RadRadioButton();
+            this.txtUserNameRegister = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel6 = new Telerik.WinControls.UI.RadLabel();
+            this.txtGenderRegister = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel4 = new Telerik.WinControls.UI.RadLabel();
+            this.txtAge = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel3 = new Telerik.WinControls.UI.RadLabel();
+            this.txtFamily = new Telerik.WinControls.UI.RadTextBox();
+            this.lblFamily = new Telerik.WinControls.UI.RadLabel();
+            this.txtFirstName = new Telerik.WinControls.UI.RadTextBox();
+            this.lblFirstName = new Telerik.WinControls.UI.RadLabel();
+            this.btnExpotExcel = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFilteGender)).BeginInit();
@@ -70,21 +71,22 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.lblFilterAge)).BeginInit();
             this.tabRegisterUser.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFamily)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblFamily)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAge)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGenderRegister)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUserNameRegister)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPasswordRegister)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserNameRegister)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGenderRegister)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFamily)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblFamily)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpotExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -205,6 +207,7 @@ namespace FirstProject
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnExpotExcel);
             this.tabPage1.Controls.Add(this.rdoFilterRegsiterDate);
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Controls.Add(this.txtFilterAge);
@@ -220,6 +223,14 @@ namespace FirstProject
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // rdoFilterRegsiterDate
+            // 
+            this.rdoFilterRegsiterDate.Location = new System.Drawing.Point(232, 176);
+            this.rdoFilterRegsiterDate.Name = "rdoFilterRegsiterDate";
+            this.rdoFilterRegsiterDate.Size = new System.Drawing.Size(116, 18);
+            this.rdoFilterRegsiterDate.TabIndex = 7;
+            this.rdoFilterRegsiterDate.Text = "Filter Register Date";
             // 
             // tabPage2
             // 
@@ -244,80 +255,14 @@ namespace FirstProject
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // txtFirstName
+            // btnRegister
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(90, 19);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(152, 24);
-            this.txtFirstName.TabIndex = 1;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.Location = new System.Drawing.Point(18, 20);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(66, 18);
-            this.lblFirstName.TabIndex = 0;
-            this.lblFirstName.Text = "First Name :";
-            // 
-            // txtFamily
-            // 
-            this.txtFamily.Location = new System.Drawing.Point(90, 57);
-            this.txtFamily.Name = "txtFamily";
-            this.txtFamily.Size = new System.Drawing.Size(152, 24);
-            this.txtFamily.TabIndex = 3;
-            // 
-            // lblFamily
-            // 
-            this.lblFamily.Location = new System.Drawing.Point(18, 58);
-            this.lblFamily.Name = "lblFamily";
-            this.lblFamily.Size = new System.Drawing.Size(44, 18);
-            this.lblFamily.TabIndex = 2;
-            this.lblFamily.Text = "Family :";
-            // 
-            // txtAge
-            // 
-            this.txtAge.Location = new System.Drawing.Point(90, 101);
-            this.txtAge.Name = "txtAge";
-            this.txtAge.Size = new System.Drawing.Size(152, 24);
-            this.txtAge.TabIndex = 3;
-            // 
-            // radLabel3
-            // 
-            this.radLabel3.Location = new System.Drawing.Point(18, 102);
-            this.radLabel3.Name = "radLabel3";
-            this.radLabel3.Size = new System.Drawing.Size(32, 18);
-            this.radLabel3.TabIndex = 2;
-            this.radLabel3.Text = "Age :";
-            // 
-            // txtGenderRegister
-            // 
-            this.txtGenderRegister.Location = new System.Drawing.Point(90, 145);
-            this.txtGenderRegister.Name = "txtGenderRegister";
-            this.txtGenderRegister.Size = new System.Drawing.Size(152, 24);
-            this.txtGenderRegister.TabIndex = 3;
-            // 
-            // radLabel4
-            // 
-            this.radLabel4.Location = new System.Drawing.Point(18, 145);
-            this.radLabel4.Name = "radLabel4";
-            this.radLabel4.Size = new System.Drawing.Size(48, 18);
-            this.radLabel4.TabIndex = 2;
-            this.radLabel4.Text = "Gender :";
-            // 
-            // txtUserNameRegister
-            // 
-            this.txtUserNameRegister.Location = new System.Drawing.Point(341, 20);
-            this.txtUserNameRegister.Name = "txtUserNameRegister";
-            this.txtUserNameRegister.Size = new System.Drawing.Size(152, 24);
-            this.txtUserNameRegister.TabIndex = 3;
-            // 
-            // radLabel6
-            // 
-            this.radLabel6.Location = new System.Drawing.Point(268, 21);
-            this.radLabel6.Name = "radLabel6";
-            this.radLabel6.Size = new System.Drawing.Size(67, 18);
-            this.radLabel6.TabIndex = 2;
-            this.radLabel6.Text = "User Name :";
+            this.btnRegister.Location = new System.Drawing.Point(18, 230);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(146, 41);
+            this.btnRegister.TabIndex = 4;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // txtPasswordRegister
             // 
@@ -334,22 +279,89 @@ namespace FirstProject
             this.radLabel7.TabIndex = 2;
             this.radLabel7.Text = "Password :";
             // 
-            // btnRegister
+            // txtUserNameRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(18, 230);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(146, 41);
-            this.btnRegister.TabIndex = 4;
-            this.btnRegister.Text = "Register";
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.txtUserNameRegister.Location = new System.Drawing.Point(341, 20);
+            this.txtUserNameRegister.Name = "txtUserNameRegister";
+            this.txtUserNameRegister.Size = new System.Drawing.Size(152, 24);
+            this.txtUserNameRegister.TabIndex = 3;
             // 
-            // rdoFilterRegsiterDate
+            // radLabel6
             // 
-            this.rdoFilterRegsiterDate.Location = new System.Drawing.Point(232, 176);
-            this.rdoFilterRegsiterDate.Name = "rdoFilterRegsiterDate";
-            this.rdoFilterRegsiterDate.Size = new System.Drawing.Size(116, 18);
-            this.rdoFilterRegsiterDate.TabIndex = 7;
-            this.rdoFilterRegsiterDate.Text = "Filter Register Date";
+            this.radLabel6.Location = new System.Drawing.Point(268, 21);
+            this.radLabel6.Name = "radLabel6";
+            this.radLabel6.Size = new System.Drawing.Size(67, 18);
+            this.radLabel6.TabIndex = 2;
+            this.radLabel6.Text = "User Name :";
+            // 
+            // txtGenderRegister
+            // 
+            this.txtGenderRegister.Location = new System.Drawing.Point(90, 145);
+            this.txtGenderRegister.Name = "txtGenderRegister";
+            this.txtGenderRegister.Size = new System.Drawing.Size(152, 24);
+            this.txtGenderRegister.TabIndex = 3;
+            // 
+            // radLabel4
+            // 
+            this.radLabel4.Location = new System.Drawing.Point(18, 145);
+            this.radLabel4.Name = "radLabel4";
+            this.radLabel4.Size = new System.Drawing.Size(48, 18);
+            this.radLabel4.TabIndex = 2;
+            this.radLabel4.Text = "Gender :";
+            // 
+            // txtAge
+            // 
+            this.txtAge.Location = new System.Drawing.Point(90, 101);
+            this.txtAge.Name = "txtAge";
+            this.txtAge.Size = new System.Drawing.Size(152, 24);
+            this.txtAge.TabIndex = 3;
+            // 
+            // radLabel3
+            // 
+            this.radLabel3.Location = new System.Drawing.Point(18, 102);
+            this.radLabel3.Name = "radLabel3";
+            this.radLabel3.Size = new System.Drawing.Size(32, 18);
+            this.radLabel3.TabIndex = 2;
+            this.radLabel3.Text = "Age :";
+            // 
+            // txtFamily
+            // 
+            this.txtFamily.Location = new System.Drawing.Point(90, 57);
+            this.txtFamily.Name = "txtFamily";
+            this.txtFamily.Size = new System.Drawing.Size(152, 24);
+            this.txtFamily.TabIndex = 3;
+            // 
+            // lblFamily
+            // 
+            this.lblFamily.Location = new System.Drawing.Point(18, 58);
+            this.lblFamily.Name = "lblFamily";
+            this.lblFamily.Size = new System.Drawing.Size(44, 18);
+            this.lblFamily.TabIndex = 2;
+            this.lblFamily.Text = "Family :";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(90, 19);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(152, 24);
+            this.txtFirstName.TabIndex = 1;
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.Location = new System.Drawing.Point(18, 20);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(66, 18);
+            this.lblFirstName.TabIndex = 0;
+            this.lblFirstName.Text = "First Name :";
+            // 
+            // btnExpotExcel
+            // 
+            this.btnExpotExcel.Location = new System.Drawing.Point(283, 271);
+            this.btnExpotExcel.Name = "btnExpotExcel";
+            this.btnExpotExcel.Size = new System.Drawing.Size(135, 34);
+            this.btnExpotExcel.TabIndex = 8;
+            this.btnExpotExcel.Text = "Export Excel";
+            this.btnExpotExcel.Click += new System.EventHandler(this.btnExpotExcel_Click);
             // 
             // RadForm1
             // 
@@ -371,22 +383,23 @@ namespace FirstProject
             this.tabRegisterUser.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFamily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lblFamily)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtAge)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGenderRegister)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtUserNameRegister)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtPasswordRegister)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUserNameRegister)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGenderRegister)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtAge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFamily)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblFamily)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpotExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -427,5 +440,6 @@ namespace FirstProject
         private Telerik.WinControls.UI.RadLabel lblFamily;
         private Telerik.WinControls.UI.RadButton btnRegister;
         private Telerik.WinControls.UI.RadRadioButton rdoFilterRegsiterDate;
+        private Telerik.WinControls.UI.RadButton btnExpotExcel;
     }
 }

@@ -29,3 +29,10 @@ C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\SimpleHTTP.dll
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\SimpleHTTP.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.csproj.AssemblyReference.cache
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.License.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.Pdf.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.XLS.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Microsoft.mshtml.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.License.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.Pdf.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.XLS.xml
