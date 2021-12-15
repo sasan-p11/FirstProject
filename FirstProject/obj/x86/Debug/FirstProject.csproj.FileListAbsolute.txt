@@ -6,7 +6,6 @@ C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControl
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\TelerikCommon.dll
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControls.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControls.UI.xml
-C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.csprojAssemblyReference.cache
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.RadForm1.resources
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.Properties.Resources.resources
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.csproj.GenerateResource.cache
@@ -29,3 +28,4 @@ C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Newtonsoft.Json.dl
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\SimpleHTTP.dll
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Newtonsoft.Json.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\SimpleHTTP.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\obj\x86\Debug\FirstProject.csproj.AssemblyReference.cache
