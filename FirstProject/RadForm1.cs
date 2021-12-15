@@ -15,7 +15,7 @@ namespace FirstProject
 {
     public partial class RadForm1 : Telerik.WinControls.UI.RadForm
     {
-        private PracticeEntities entities = new PracticeEntities();
+        private Entities entities = new Entities();
         private static readonly log4net.ILog log
      = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public RadForm1()
@@ -33,7 +33,7 @@ namespace FirstProject
             try
             {
                 log.Info("Get User for RadForm1_load !!!");
-                users = entities.User.Select(c => c).ToList();
+                users = entities.Users.Select(c => c).ToList();
             }
             catch (Exception ex)
             {
@@ -77,7 +77,7 @@ namespace FirstProject
                     try
                     {
                         log.Info("get data for selct user by id ");
-                        user = entities.User.Find(id);
+                        user = entities.Users.Find(id);
                     }
                     catch (Exception ex)
                     {
@@ -109,7 +109,7 @@ namespace FirstProject
                 var user = new User();
                 try
                 {
-                    user = entities.User.Where(x => x.Login.UserName == Name && x.Login.Password == Password).FirstOrDefault();
+                    user = entities.Users.Where(x => x.Login.UserName == Name && x.Login.Password == Password).FirstOrDefault();
                 }
                 catch (Exception ex)
                 {
@@ -157,10 +157,10 @@ namespace FirstProject
                 };
 
 
-                var entity = new PracticeEntities();
+                var entity = new Entities();
                 try
                 {
-                    entities.User.Add(user);
+                    entities.Users.Add(user);
                     entities.SaveChanges();
                     rp.AsText("register is sucsecful");
                 }
@@ -188,7 +188,7 @@ namespace FirstProject
                 var user = new List<User>();
                 try
                 {
-                    user = entities.User.Select(c=>c).OrderBy(x=>x.RegisterDate).ToList();
+                    user = entities.Users.Select(c=>c).OrderBy(x=>x.RegisterDate).ToList();
         
                 }
                 catch (Exception ex)
@@ -216,7 +216,7 @@ namespace FirstProject
                 var user = new List<User>();
                 try
                 {
-                    user = entities.User.Where(x => x.Gender == gender && x.Age == age).ToList();
+                    user = entities.Users.Where(x => x.Gender == gender && x.Age == age).ToList();
 
                 }
                 catch (Exception ex)
@@ -238,7 +238,7 @@ namespace FirstProject
                 var user = new List<User>();
                 try
                 {
-                    user = entities.User.Where(x => x.Gender == gender).ToList();
+                    user = entities.Users.Where(x => x.Gender == gender).ToList();
 
                 }
                 catch (Exception ex)
@@ -254,13 +254,13 @@ namespace FirstProject
                                                    item.RegisterDate, item.Login.UserName, item.Login.Password);
                 }
             }
-            else if (txtFilterAge.Text != null)
+            else if (txtFilterAge.Text != "")
             {
                 int age = int.Parse(txtFilterAge.Text);
                 var user = new List<User>();
                 try
                 {
-                    user = entities.User.Where(x => x.Age == age).ToList();
+                    user = entities.Users.Where(x => x.Age == age).ToList();
 
                 }
                 catch (Exception ex)
@@ -318,7 +318,7 @@ namespace FirstProject
 
             try
             {
-                entities.User.Add(user);
+                entities.Users.Add(user);
                 entities.SaveChanges();
                 MessageBox.Show("register is sucessful");
             }

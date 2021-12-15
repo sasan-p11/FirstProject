@@ -4,9 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="b527cef7042f40528cc2afef6558e04a" Name="Diagram1">
+      <Diagram DiagramId="4699981688584c2f9e59cee53a976700" Name="Diagram1">
         <EntityTypeShape EntityType="PracticeModel.Login" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="PracticeModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PracticeModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PracticeModel.User" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="PracticeModel.FK_Login_User" ManuallyRouted="false" />
       </Diagram>
