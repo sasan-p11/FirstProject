@@ -129,20 +129,87 @@ namespace FirstProject
                     rp.AsText("UserName or password not valid");
                 }
             });
+            Route.Add("/RegisterUser", (rq, rp, args) =>
+            {
+                log.Info("Register User is run");
+
+                var files = rq.ParseBody(args);
+
+                string name = args["name"];
+                string family = args["family"];
+                int age = int.Parse(args["age"]);
+                string gender = args["gender"];
+                string userName = args["username"];
+                string password = args["password"];
+
+                var user = new User()
+                {
+                    FirstName = name,
+                    Family = family,
+                    Age = age,
+                    Gender = gender,
+                    RegisterDate = DateTime.Now,
+                    Login = new Login()
+                    {
+                        UserName = userName,
+                        Password = password
+                    }
+                };
+
+
+                var entity = new PracticeEntities();
+                try
+                {
+                    entities.User.Add(user);
+                    entities.SaveChanges();
+                    rp.AsText("register is sucsecful");
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                    throw new Exception("can not register user");
+                }
+            });
         }
 
         private void btnFilter_Click(object sender, EventArgs e)
         {
-            if (txtGender.Text == "" && txtFilterAge.Text == "")
+            if (txtGender.Text == "" && txtFilterAge.Text == "" && !rdoFilterRegsiterDate.IsChecked)
             {
                 MessageBox.Show("plese inter text box");
                 return;
             }
-               
+
 
             log.Info("Filter with gender is run");
 
-            if (txtGender.Text != "" && txtFilterAge.Text != "")
+            if(rdoFilterRegsiterDate.IsChecked)
+            {
+                var user = new List<User>();
+                try
+                {
+                    user = entities.User.Select(c=>c).OrderBy(x=>x.RegisterDate).ToList();
+        
+                }
+                catch (Exception ex)
+                {
+                    log.Error(ex.Message);
+                    throw new Exception("can not get user with gender");
+                }
+                dataGridView2.Rows.Clear();
+                int i = 0;
+                foreach (var item in user)
+                {
+                    if (i == 5)
+                        break;
+
+                    dataGridView2.Rows.Add(item.UserId, item.Gender, item.FirstName, item.Family, item.Age,
+                                                      item.RegisterDate, item.Login.UserName, item.Login.Password);
+                    ++i;
+                }
+
+            }
+            else if (txtGender.Text != "" && txtFilterAge.Text != "")
             {
                 string gender = txtGender.Text;
                 int age = int.Parse(txtFilterAge.Text);
@@ -187,7 +254,7 @@ namespace FirstProject
                                                    item.RegisterDate, item.Login.UserName, item.Login.Password);
                 }
             }
-            else if(txtFilterAge.Text != null)
+            else if (txtFilterAge.Text != null)
             {
                 int age = int.Parse(txtFilterAge.Text);
                 var user = new List<User>();
@@ -222,7 +289,7 @@ namespace FirstProject
             var userName = txtUserNameRegister.Text;
             var password = txtPasswordRegister.Text;
 
-            if (name == "") 
+            if (name == "")
                 MessageBox.Show("please inter Name");
             if (family == "")
                 MessageBox.Show("please inter Family");

@@ -60,6 +60,7 @@ namespace FirstProject
             this.txtPasswordRegister = new Telerik.WinControls.UI.RadTextBox();
             this.radLabel7 = new Telerik.WinControls.UI.RadLabel();
             this.btnRegister = new Telerik.WinControls.UI.RadButton();
+            this.rdoFilterRegsiterDate = new Telerik.WinControls.UI.RadRadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFilteGender)).BeginInit();
@@ -83,6 +84,7 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.txtPasswordRegister)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +147,7 @@ namespace FirstProject
             // 
             // radButton2
             // 
-            this.radButton2.Location = new System.Drawing.Point(10, 240);
+            this.radButton2.Location = new System.Drawing.Point(6, 271);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(130, 34);
             this.radButton2.TabIndex = 1;
@@ -169,7 +171,7 @@ namespace FirstProject
             // 
             // btnFilter
             // 
-            this.btnFilter.Location = new System.Drawing.Point(147, 240);
+            this.btnFilter.Location = new System.Drawing.Point(142, 271);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(135, 34);
             this.btnFilter.TabIndex = 4;
@@ -203,6 +205,7 @@ namespace FirstProject
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.rdoFilterRegsiterDate);
             this.tabPage1.Controls.Add(this.dataGridView2);
             this.tabPage1.Controls.Add(this.txtFilterAge);
             this.tabPage1.Controls.Add(this.radButton2);
@@ -340,6 +343,14 @@ namespace FirstProject
             this.btnRegister.Text = "Register";
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // rdoFilterRegsiterDate
+            // 
+            this.rdoFilterRegsiterDate.Location = new System.Drawing.Point(232, 176);
+            this.rdoFilterRegsiterDate.Name = "rdoFilterRegsiterDate";
+            this.rdoFilterRegsiterDate.Size = new System.Drawing.Size(116, 18);
+            this.rdoFilterRegsiterDate.TabIndex = 7;
+            this.rdoFilterRegsiterDate.Text = "Filter Register Date";
+            // 
             // RadForm1
             // 
             this.ClientSize = new System.Drawing.Size(888, 360);
@@ -375,6 +386,7 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.txtPasswordRegister)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -414,5 +426,6 @@ namespace FirstProject
         private Telerik.WinControls.UI.RadTextBox txtFamily;
         private Telerik.WinControls.UI.RadLabel lblFamily;
         private Telerik.WinControls.UI.RadButton btnRegister;
+        private Telerik.WinControls.UI.RadRadioButton rdoFilterRegsiterDate;
     }
 }

@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="UserName" Type="nvarchar(max)" />
     <Property Name="Password" Type="nvarchar(max)" />
   </EntityType>
@@ -22,7 +22,7 @@
     <Key>
       <PropertyRef Name="UserId" />
     </Key>
-    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Gender" Type="nchar" MaxLength="10" />
     <Property Name="FirstName" Type="nvarchar(max)" />
     <Property Name="Family" Type="nvarchar(max)" />
