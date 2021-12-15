@@ -374,7 +374,6 @@ namespace FirstProject
             {
                 DataRow dr = dt.NewRow();
                 for (int countsub = 0; countsub < dgv.Columns.Count; countsub++)
-               // for (int countsub = 0; countsub < dgv.Rows.Count; countsub++)
                 {
                     dr[countsub] = Convert.ToString(dgv.Rows[count].Cells[countsub].Value);
                 }
