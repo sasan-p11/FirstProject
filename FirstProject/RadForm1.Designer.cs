@@ -29,11 +29,8 @@ namespace FirstProject
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
-            Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
-            Telerik.WinControls.UI.LinearAxis linearAxis1 = new Telerik.WinControls.UI.LinearAxis();
-            Telerik.WinControls.UI.BarSeries barSeries1 = new Telerik.WinControls.UI.BarSeries();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RadForm1));
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,10 +65,25 @@ namespace FirstProject
             this.txtFirstName = new Telerik.WinControls.UI.RadTextBox();
             this.lblFirstName = new Telerik.WinControls.UI.RadLabel();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.radChart = new Telerik.WinControls.UI.RadChartView();
-            this.database_planarDataSet = new FirstProject.database_planarDataSet();
-            this.tilecalibregradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tile_calibre_gradeTableAdapter = new FirstProject.database_planarDataSetTableAdapters.tile_calibre_gradeTableAdapter();
+            this.radChartView1 = new Telerik.WinControls.UI.RadChartView();
+            this.Number = new Telerik.WinControls.UI.RadLabel();
+            this.txtNumber = new Telerik.WinControls.UI.RadTextBox();
+            this.radLabel2 = new Telerik.WinControls.UI.RadLabel();
+            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.txtUpToDate = new Telerik.WinControls.UI.RadTextBox();
+            this.txtFrom = new Telerik.WinControls.UI.RadTextBox();
+            this.btnFilterGrade = new Telerik.WinControls.UI.RadButton();
+            this.chkGetTheLatest = new Telerik.WinControls.UI.RadCheckBox();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.radPageView1 = new Telerik.WinControls.UI.RadPageView();
+            this.radPageViewPage1 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage2 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage3 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage4 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage5 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage6 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage7 = new Telerik.WinControls.UI.RadPageViewPage();
+            this.radPageViewPage8 = new Telerik.WinControls.UI.RadPageViewPage();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFilteGender)).BeginInit();
@@ -98,9 +110,18 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radChart)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database_planarDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tilecalibregradeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radChartView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Number)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUpToDate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFrom)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFilterGrade)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGetTheLatest)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).BeginInit();
+            this.radPageView1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,7 +235,8 @@ namespace FirstProject
             this.tabRegisterUser.Controls.Add(this.tabPage1);
             this.tabRegisterUser.Controls.Add(this.tabPage2);
             this.tabRegisterUser.Controls.Add(this.tabPage3);
-            this.tabRegisterUser.Location = new System.Drawing.Point(12, 12);
+            this.tabRegisterUser.Controls.Add(this.tabPage4);
+            this.tabRegisterUser.Location = new System.Drawing.Point(12, 11);
             this.tabRegisterUser.Name = "tabRegisterUser";
             this.tabRegisterUser.SelectedIndex = 0;
             this.tabRegisterUser.Size = new System.Drawing.Size(865, 337);
@@ -380,7 +402,15 @@ namespace FirstProject
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.radChart);
+            this.tabPage3.Controls.Add(this.radChartView1);
+            this.tabPage3.Controls.Add(this.Number);
+            this.tabPage3.Controls.Add(this.txtNumber);
+            this.tabPage3.Controls.Add(this.radLabel2);
+            this.tabPage3.Controls.Add(this.radLabel1);
+            this.tabPage3.Controls.Add(this.txtUpToDate);
+            this.tabPage3.Controls.Add(this.txtFrom);
+            this.tabPage3.Controls.Add(this.btnFilterGrade);
+            this.tabPage3.Controls.Add(this.chkGetTheLatest);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -389,39 +419,172 @@ namespace FirstProject
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // radChart
+            // radChartView1
             // 
-            this.radChart.AreaDesign = cartesianArea1;
-            categoricalAxis1.IsPrimary = true;
-            linearAxis1.AxisType = Telerik.Charting.AxisType.Second;
-            linearAxis1.IsPrimary = true;
-            linearAxis1.TickOrigin = null;
-            this.radChart.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
-            categoricalAxis1,
-            linearAxis1});
-            this.radChart.Location = new System.Drawing.Point(6, 3);
-            this.radChart.Name = "radChart";
-            barSeries1.HorizontalAxis = categoricalAxis1;
-            barSeries1.VerticalAxis = linearAxis1;
-            this.radChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
-            barSeries1});
-            this.radChart.ShowGrid = false;
-            this.radChart.Size = new System.Drawing.Size(480, 302);
-            this.radChart.TabIndex = 0;
+            this.radChartView1.AreaDesign = cartesianArea1;
+            this.radChartView1.Location = new System.Drawing.Point(6, 6);
+            this.radChartView1.Name = "radChartView1";
+            this.radChartView1.ShowGrid = false;
+            this.radChartView1.Size = new System.Drawing.Size(480, 299);
+            this.radChartView1.TabIndex = 0;
             // 
-            // database_planarDataSet
+            // Number
             // 
-            this.database_planarDataSet.DataSetName = "database_planarDataSet";
-            this.database_planarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.Number.Location = new System.Drawing.Point(493, 67);
+            this.Number.Name = "Number";
+            this.Number.Size = new System.Drawing.Size(56, 18);
+            this.Number.TabIndex = 9;
+            this.Number.Text = "Number : ";
             // 
-            // tilecalibregradeBindingSource
+            // txtNumber
             // 
-            this.tilecalibregradeBindingSource.DataMember = "tile_calibre_grade";
-            this.tilecalibregradeBindingSource.DataSource = this.database_planarDataSet;
+            this.txtNumber.Location = new System.Drawing.Point(560, 66);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(100, 24);
+            this.txtNumber.TabIndex = 8;
             // 
-            // tile_calibre_gradeTableAdapter
+            // radLabel2
             // 
-            this.tile_calibre_gradeTableAdapter.ClearBeforeFill = true;
+            this.radLabel2.Location = new System.Drawing.Point(493, 37);
+            this.radLabel2.Name = "radLabel2";
+            this.radLabel2.Size = new System.Drawing.Size(59, 18);
+            this.radLabel2.TabIndex = 7;
+            this.radLabel2.Text = "Up to date";
+            // 
+            // radLabel1
+            // 
+            this.radLabel1.Location = new System.Drawing.Point(493, 10);
+            this.radLabel1.Name = "radLabel1";
+            this.radLabel1.Size = new System.Drawing.Size(32, 18);
+            this.radLabel1.TabIndex = 6;
+            this.radLabel1.Text = "From";
+            // 
+            // txtUpToDate
+            // 
+            this.txtUpToDate.Location = new System.Drawing.Point(560, 36);
+            this.txtUpToDate.Name = "txtUpToDate";
+            this.txtUpToDate.Size = new System.Drawing.Size(100, 24);
+            this.txtUpToDate.TabIndex = 5;
+            // 
+            // txtFrom
+            // 
+            this.txtFrom.Location = new System.Drawing.Point(560, 6);
+            this.txtFrom.Name = "txtFrom";
+            this.txtFrom.Size = new System.Drawing.Size(100, 24);
+            this.txtFrom.TabIndex = 4;
+            // 
+            // btnFilterGrade
+            // 
+            this.btnFilterGrade.Location = new System.Drawing.Point(492, 281);
+            this.btnFilterGrade.Name = "btnFilterGrade";
+            this.btnFilterGrade.Size = new System.Drawing.Size(110, 24);
+            this.btnFilterGrade.TabIndex = 2;
+            this.btnFilterGrade.Text = "Filter";
+            this.btnFilterGrade.Click += new System.EventHandler(this.btnFilterGrade_Click);
+            // 
+            // chkGetTheLatest
+            // 
+            this.chkGetTheLatest.Location = new System.Drawing.Point(502, 114);
+            this.chkGetTheLatest.Name = "chkGetTheLatest";
+            this.chkGetTheLatest.Size = new System.Drawing.Size(111, 18);
+            this.chkGetTheLatest.TabIndex = 1;
+            this.chkGetTheLatest.Text = "Get the latest 100";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.radPageView1);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(857, 311);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "tabPage4";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // radPageView1
+            // 
+            this.radPageView1.Controls.Add(this.radPageViewPage1);
+            this.radPageView1.Controls.Add(this.radPageViewPage2);
+            this.radPageView1.Controls.Add(this.radPageViewPage3);
+            this.radPageView1.Controls.Add(this.radPageViewPage4);
+            this.radPageView1.Controls.Add(this.radPageViewPage5);
+            this.radPageView1.Controls.Add(this.radPageViewPage6);
+            this.radPageView1.Controls.Add(this.radPageViewPage7);
+            this.radPageView1.Controls.Add(this.radPageViewPage8);
+            this.radPageView1.Location = new System.Drawing.Point(6, 8);
+            this.radPageView1.Name = "radPageView1";
+            this.radPageView1.SelectedPage = this.radPageViewPage2;
+            this.radPageView1.Size = new System.Drawing.Size(845, 300);
+            this.radPageView1.TabIndex = 0;
+            this.radPageView1.ViewMode = Telerik.WinControls.UI.PageViewMode.NavigationView;
+            // 
+            // radPageViewPage1
+            // 
+            this.radPageViewPage1.ImeMode = System.Windows.Forms.ImeMode.On;
+            this.radPageViewPage1.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage1.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage1.Name = "radPageViewPage1";
+            this.radPageViewPage1.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage1.SvgImageXml = resources.GetString("radPageViewPage1.SvgImageXml");
+            this.radPageViewPage1.TabStop = true;
+            this.radPageViewPage1.Text = "radPageViewPage1";
+            this.radPageViewPage1.UseWaitCursor = true;
+            // 
+            // radPageViewPage2
+            // 
+            this.radPageViewPage2.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage2.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage2.Name = "radPageViewPage2";
+            this.radPageViewPage2.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage2.Text = "radPageViewPage2";
+            // 
+            // radPageViewPage3
+            // 
+            this.radPageViewPage3.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage3.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage3.Name = "radPageViewPage3";
+            this.radPageViewPage3.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage3.Text = "radPageViewPage3";
+            // 
+            // radPageViewPage4
+            // 
+            this.radPageViewPage4.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage4.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage4.Name = "radPageViewPage4";
+            this.radPageViewPage4.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage4.Text = "radPageViewPage4";
+            // 
+            // radPageViewPage5
+            // 
+            this.radPageViewPage5.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage5.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage5.Name = "radPageViewPage5";
+            this.radPageViewPage5.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage5.Text = "radPageViewPage5";
+            // 
+            // radPageViewPage6
+            // 
+            this.radPageViewPage6.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage6.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage6.Name = "radPageViewPage6";
+            this.radPageViewPage6.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage6.Text = "radPageViewPage6";
+            // 
+            // radPageViewPage7
+            // 
+            this.radPageViewPage7.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage7.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage7.Name = "radPageViewPage7";
+            this.radPageViewPage7.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage7.Text = "radPageViewPage7";
+            // 
+            // radPageViewPage8
+            // 
+            this.radPageViewPage8.ItemSize = new System.Drawing.SizeF(134F, 33F);
+            this.radPageViewPage8.Location = new System.Drawing.Point(281, 37);
+            this.radPageViewPage8.Name = "radPageViewPage8";
+            this.radPageViewPage8.Size = new System.Drawing.Size(563, 262);
+            this.radPageViewPage8.Text = "radPageViewPage8";
             // 
             // RadForm1
             // 
@@ -461,9 +624,19 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.radChart)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.database_planarDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tilecalibregradeBindingSource)).EndInit();
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radChartView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Number)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNumber)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtUpToDate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtFrom)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnFilterGrade)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chkGetTheLatest)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radPageView1)).EndInit();
+            this.radPageView1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -506,9 +679,24 @@ namespace FirstProject
         private Telerik.WinControls.UI.RadRadioButton rdoFilterRegsiterDate;
         private Telerik.WinControls.UI.RadButton btnExpotExcel;
         private System.Windows.Forms.TabPage tabPage3;
-        private Telerik.WinControls.UI.RadChartView radChart;
-        private database_planarDataSet database_planarDataSet;
-        private System.Windows.Forms.BindingSource tilecalibregradeBindingSource;
-        private database_planarDataSetTableAdapters.tile_calibre_gradeTableAdapter tile_calibre_gradeTableAdapter;
+        private Telerik.WinControls.UI.RadChartView radChartView1;
+        private Telerik.WinControls.UI.RadLabel radLabel2;
+        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadTextBox txtUpToDate;
+        private Telerik.WinControls.UI.RadTextBox txtFrom;
+        private Telerik.WinControls.UI.RadButton btnFilterGrade;
+        private Telerik.WinControls.UI.RadCheckBox chkGetTheLatest;
+        private Telerik.WinControls.UI.RadLabel Number;
+        private Telerik.WinControls.UI.RadTextBox txtNumber;
+        private System.Windows.Forms.TabPage tabPage4;
+        private Telerik.WinControls.UI.RadPageView radPageView1;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage1;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage2;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage3;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage4;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage5;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage6;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage7;
+        private Telerik.WinControls.UI.RadPageViewPage radPageViewPage8;
     }
 }

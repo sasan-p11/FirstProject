@@ -29,21 +29,9 @@ namespace FirstProject
         }
         private void RadForm1_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'database_planarDataSet.tile_calibre_grade' table. You can move, or remove it, as needed.
-            this.tile_calibre_gradeTableAdapter.Fill(this.database_planarDataSet.tile_calibre_grade);
-            // TODO: This line of code loads data into the 'database_planarDataSet.error' table. You can move, or remove it, as needed.
-          //  this.errorTableAdapter.Fill(this.database_planarDataSet.error);
-            // TODO: This line of code loads data into the 'database_planarDataSet.tile' table. You can move, or remove it, as needed.
-           // this.tileTableAdapter.Fill(this.database_planarDataSet.tile);
-            // TODO: This line of code loads data into the 'database_planarDataSet.tile_calibre_grade' table. You can move, or remove it, as needed.
-            this.tile_calibre_gradeTableAdapter.Fill(this.database_planarDataSet.tile_calibre_grade);
-            // TODO: This line of code loads data into the 'database_planarDataSet.tile' table. You can move, or remove it, as needed.
-         //   this.tileTableAdapter.Fill(this.database_planarDataSet.tile);
-            // TODO: This line of code loads data into the 'database_planarDataSet.tile_calibre_grade' table. You can move, or remove it, as needed.
-            this.tile_calibre_gradeTableAdapter.Fill(this.database_planarDataSet.tile_calibre_grade);
+            #region
             log.Info("RadForm1_load is run!!!");
 
-            //var users = entities.User.Select(c => c).ToList();
             var users = new List<User>();
 
             try
@@ -62,17 +50,35 @@ namespace FirstProject
                 dataGridView2.Rows.Add(item.UserId, item.Gender, item.FirstName, item.Family, item.Age,
                                                item.RegisterDate, item.Login.UserName, item.Login.Password);
             }
+            #endregion
 
+            #region
             var grade4 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 4).Count();
             var grade3 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 3).Count();
             var grade2 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 2).Count();
             var grade1 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 1).Count();
-            BarSeries gradeSeries = new BarSeries();
-            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade4 ,"grade4"));
-            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade3,"grade3"));
-            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade2,"grade1"));
-            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade1,"grade2"));
-            this.radChart.Series.Add(gradeSeries);
+
+            BarSeries gradeSeries1 = new BarSeries();
+            BarSeries gradeSeries2 = new BarSeries();
+            BarSeries gradeSeries3 = new BarSeries();
+            BarSeries gradeSeries4 = new BarSeries();
+
+            gradeSeries1.Name = "grade = 1";
+            gradeSeries1.Name = "grade = 2";
+            gradeSeries1.Name = "grade = 3";
+            gradeSeries1.Name = "grade = 4";
+
+            gradeSeries1.DataPoints.Add(new CategoricalDataPoint(grade1, "grade"));
+            gradeSeries2.DataPoints.Add(new CategoricalDataPoint(grade2, "grade"));
+            gradeSeries3.DataPoints.Add(new CategoricalDataPoint(grade3, "grade"));
+            gradeSeries4.DataPoints.Add(new CategoricalDataPoint(grade4, "grade"));
+
+            this.radChartView1.Series.Add(gradeSeries1);
+            this.radChartView1.Series.Add(gradeSeries2);
+            this.radChartView1.Series.Add(gradeSeries3);
+            this.radChartView1.Series.Add(gradeSeries4);
+            #endregion
+
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -409,6 +415,114 @@ namespace FirstProject
                 .Sum(t => Convert.ToDecimal(t.Cells[2].Value));
             dt.Rows.Add(total);
             return dt;
+        }
+
+        private void btnFilterGrade_Click(object sender, EventArgs e)
+        {
+            if (txtFrom.Text != "" && txtUpToDate.Text != "")
+            {
+                var from = Convert.ToDateTime(txtFrom.Text);
+                var UpToDate = Convert.ToDateTime(txtUpToDate.Text);
+                //          var d = planerEntity.tile_calibre_grade.Select(x=>x.time_stamp).FirstOrDefault().ToFileTimeUtc();
+                var grade4 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 4 && (x.time_stamp > from && x.time_stamp < UpToDate)).Count();
+                var grade3 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 3 && (x.time_stamp > from && x.time_stamp < UpToDate)).Count();
+                var grade2 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 2 && (x.time_stamp > from && x.time_stamp < UpToDate)).Count();
+                var grade1 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 1 && (x.time_stamp > from && x.time_stamp < UpToDate)).Count();
+
+                radChartView1.Controls.Clear();
+
+                BarSeries gradeSeries1 = new BarSeries();
+                BarSeries gradeSeries2 = new BarSeries();
+                BarSeries gradeSeries3 = new BarSeries();
+                BarSeries gradeSeries4 = new BarSeries();
+
+                gradeSeries1.Name = "grade = 1";
+                gradeSeries1.Name = "grade = 2";
+                gradeSeries1.Name = "grade = 3";
+                gradeSeries1.Name = "grade = 4";
+
+                gradeSeries1.DataPoints.Add(new CategoricalDataPoint(grade1, "grade"));
+                gradeSeries2.DataPoints.Add(new CategoricalDataPoint(grade2, "grade"));
+                gradeSeries3.DataPoints.Add(new CategoricalDataPoint(grade3, "grade"));
+                gradeSeries4.DataPoints.Add(new CategoricalDataPoint(grade4, "grade"));
+
+                this.radChartView1.Series.Add(gradeSeries1);
+                this.radChartView1.Series.Add(gradeSeries2);
+                this.radChartView1.Series.Add(gradeSeries3);
+                this.radChartView1.Series.Add(gradeSeries4);
+            }
+            else if(txtNumber.Text != "")
+            {
+                var number = int.Parse(txtNumber.Text);
+
+                var grade4List = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 4).OrderBy(x=>x.id).ToList();
+                var grade3List = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 3).OrderBy(x => x.id).ToList();
+                var grade2List = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 2).OrderBy(x => x.id).ToList();
+                var grade1List = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 1).OrderBy(x => x.id).ToList();
+                var grade4 = new List<tile_calibre_grade>();
+                var grade3 = new List<tile_calibre_grade>();
+                var grade2 = new List<tile_calibre_grade>();
+                var grade1 = new List<tile_calibre_grade>();
+                for (int i = 0; i < number; i++)
+                {
+                    grade4.Add(grade4List[i]);
+                    grade3.Add(grade3List[i]);
+                    grade2.Add(grade2List[i]);
+                    grade1.Add(grade1List[i]);
+                }
+
+                radChartView1.Series.Clear();
+
+                BarSeries gradeSeries1 = new BarSeries();
+                BarSeries gradeSeries2 = new BarSeries();
+                BarSeries gradeSeries3 = new BarSeries();
+                BarSeries gradeSeries4 = new BarSeries();
+
+                gradeSeries1.Name = "grade = 1";
+                gradeSeries1.Name = "grade = 2";
+                gradeSeries1.Name = "grade = 3";
+                gradeSeries1.Name = "grade = 4";
+
+                gradeSeries1.DataPoints.Add(new CategoricalDataPoint(grade1.Count(), "grade"));
+                gradeSeries2.DataPoints.Add(new CategoricalDataPoint(grade2.Count(), "grade"));
+                gradeSeries3.DataPoints.Add(new CategoricalDataPoint(grade3.Count(), "grade"));
+                gradeSeries4.DataPoints.Add(new CategoricalDataPoint(grade4.Count(), "grade"));
+
+                this.radChartView1.Series.Add(gradeSeries1);
+                this.radChartView1.Series.Add(gradeSeries2);
+                this.radChartView1.Series.Add(gradeSeries3);
+                this.radChartView1.Series.Add(gradeSeries4);
+            }
+            if(chkGetTheLatest.Checked)
+            {
+                var time = DateTime.Now.AddHours(-100);
+                var grade4 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 4 && (x.time_stamp > time)).Count();
+                var grade3 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 3 && (x.time_stamp > time)).Count();
+                var grade2 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 2 && (x.time_stamp > time)).Count();
+                var grade1 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 1 && (x.time_stamp > time)).Count();
+
+                radChartView1.Series.Clear();
+
+                BarSeries gradeSeries1 = new BarSeries();
+                BarSeries gradeSeries2 = new BarSeries();
+                BarSeries gradeSeries3 = new BarSeries();
+                BarSeries gradeSeries4 = new BarSeries();
+
+                gradeSeries1.Name = "grade = 1";
+                gradeSeries1.Name = "grade = 2";
+                gradeSeries1.Name = "grade = 3";
+                gradeSeries1.Name = "grade = 4";
+
+                gradeSeries1.DataPoints.Add(new CategoricalDataPoint(grade1, "grade"));
+                gradeSeries2.DataPoints.Add(new CategoricalDataPoint(grade2, "grade"));
+                gradeSeries3.DataPoints.Add(new CategoricalDataPoint(grade3, "grade"));
+                gradeSeries4.DataPoints.Add(new CategoricalDataPoint(grade4, "grade"));
+
+                this.radChartView1.Series.Add(gradeSeries1);
+                this.radChartView1.Series.Add(gradeSeries2);
+                this.radChartView1.Series.Add(gradeSeries3);
+                this.radChartView1.Series.Add(gradeSeries4);
+            }
         }
     }
 }
