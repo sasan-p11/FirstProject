@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="database_planarModelStoreContainer" CdmEntityContainer="Planer">
+    <EntitySetMapping Name="accesses">
+      <EntityTypeMapping TypeName="database_planarModel.access">
+        <MappingFragment StoreEntitySet="access">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="access_config" ColumnName="access_config" />
+          <ScalarProperty Name="name_access_config" ColumnName="name_access_config" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="accounts">
+      <EntityTypeMapping TypeName="database_planarModel.account">
+        <MappingFragment StoreEntitySet="account">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="user_name" ColumnName="user_name" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="fisrt_name" ColumnName="fisrt_name" />
+          <ScalarProperty Name="last_name" ColumnName="last_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="config_calibre">
+      <EntityTypeMapping TypeName="database_planarModel.config_calibre">
+        <MappingFragment StoreEntitySet="config_calibre">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="difference_a" ColumnName="difference_a" />
+          <ScalarProperty Name="difference_b" ColumnName="difference_b" />
+          <ScalarProperty Name="parallelism_a" ColumnName="parallelism_a" />
+          <ScalarProperty Name="Parallelism_b" ColumnName="Parallelism_b" />
+          <ScalarProperty Name="curvat_a" ColumnName="curvat_a" />
+          <ScalarProperty Name="curvat_b" ColumnName="curvat_b" />
+          <ScalarProperty Name="curvat_x2_a" ColumnName="curvat_x2_a" />
+          <ScalarProperty Name="curvat_x2_b" ColumnName="curvat_x2_b" />
+          <ScalarProperty Name="ortogon" ColumnName="ortogon" />
+          <ScalarProperty Name="grade_config" ColumnName="grade_config" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="config_planar">
+      <EntityTypeMapping TypeName="database_planarModel.config_planar">
+        <MappingFragment StoreEntitySet="config_planar">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="curvcenter_c" ColumnName="curvcenter_c" />
+          <ScalarProperty Name="curvcenter_v" ColumnName="curvcenter_v" />
+          <ScalarProperty Name="curv_av" ColumnName="curv_av" />
+          <ScalarProperty Name="curv_bv" ColumnName="curv_bv" />
+          <ScalarProperty Name="curv_ac" ColumnName="curv_ac" />
+          <ScalarProperty Name="curv_bc" ColumnName="curv_bc" />
+          <ScalarProperty Name="twist" ColumnName="twist" />
+          <ScalarProperty Name="contrd" ColumnName="contrd" />
+          <ScalarProperty Name="corner_p" ColumnName="corner_p" />
+          <ScalarProperty Name="corner_n" ColumnName="corner_n" />
+          <ScalarProperty Name="grade_config" ColumnName="grade_config" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="connect_calibre_config">
+      <EntityTypeMapping TypeName="database_planarModel.connect_calibre_config">
+        <MappingFragment StoreEntitySet="connect_calibre_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_calibre_config_1" ColumnName="id_calibre_config_1" />
+          <ScalarProperty Name="id_calibre_config_2" ColumnName="id_calibre_config_2" />
+          <ScalarProperty Name="id_calibre_config_3" ColumnName="id_calibre_config_3" />
+          <ScalarProperty Name="id_calibre_config_4" ColumnName="id_calibre_config_4" />
+          <ScalarProperty Name="id_calibre_config_5" ColumnName="id_calibre_config_5" />
+          <ScalarProperty Name="id_calibre_config_6" ColumnName="id_calibre_config_6" />
+          <ScalarProperty Name="id_calibre_config_7" ColumnName="id_calibre_config_7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="connect_planar_config">
+      <EntityTypeMapping TypeName="database_planarModel.connect_planar_config">
+        <MappingFragment StoreEntitySet="connect_planar_config">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_planar_config_1" ColumnName="id_planar_config_1" />
+          <ScalarProperty Name="id_planar_config_2" ColumnName="id_planar_config_2" />
+          <ScalarProperty Name="id_planar_config_3" ColumnName="id_planar_config_3" />
+          <ScalarProperty Name="id_planar_config_4" ColumnName="id_planar_config_4" />
+          <ScalarProperty Name="id_planar_config_5" ColumnName="id_planar_config_5" />
+          <ScalarProperty Name="id_planar_config_6" ColumnName="id_planar_config_6" />
+          <ScalarProperty Name="id_planar_config_7" ColumnName="id_planar_config_7" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="errors">
+      <EntityTypeMapping TypeName="database_planarModel.error">
+        <MappingFragment StoreEntitySet="error">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="type_error" ColumnName="type_error" />
+          <ScalarProperty Name="id_tile" ColumnName="id_tile" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="grades">
+      <EntityTypeMapping TypeName="database_planarModel.grade">
+        <MappingFragment StoreEntitySet="grade">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="grade1" ColumnName="grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="database_planarModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tiles">
+      <EntityTypeMapping TypeName="database_planarModel.tile">
+        <MappingFragment StoreEntitySet="tile">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_g" ColumnName="id_g" />
+          <ScalarProperty Name="id_planar_details" ColumnName="id_planar_details" />
+          <ScalarProperty Name="id_calibre_details" ColumnName="id_calibre_details" />
+          <ScalarProperty Name="id_planar_grade" ColumnName="id_planar_grade" />
+          <ScalarProperty Name="id_calibre_grade" ColumnName="id_calibre_grade" />
+          <ScalarProperty Name="id_grade" ColumnName="id_grade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tile_calibre_details">
+      <EntityTypeMapping TypeName="database_planarModel.tile_calibre_details">
+        <MappingFragment StoreEntitySet="tile_calibre_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="difference_a" ColumnName="difference_a" />
+          <ScalarProperty Name="difference_b" ColumnName="difference_b" />
+          <ScalarProperty Name="parallelism_a" ColumnName="parallelism_a" />
+          <ScalarProperty Name="parallelism_b" ColumnName="parallelism_b" />
+          <ScalarProperty Name="curvat_a" ColumnName="curvat_a" />
+          <ScalarProperty Name="curvat_b" ColumnName="curvat_b" />
+          <ScalarProperty Name="curvat_x2_a" ColumnName="curvat_x2_a" />
+          <ScalarProperty Name="curvat_x2_b" ColumnName="curvat_x2_b" />
+          <ScalarProperty Name="ortogon" ColumnName="ortogon" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tile_calibre_grade">
+      <EntityTypeMapping TypeName="database_planarModel.tile_calibre_grade">
+        <MappingFragment StoreEntitySet="tile_calibre_grade">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="grade_difference_a" ColumnName="grade_difference_a" />
+          <ScalarProperty Name="grade_difference_b" ColumnName="grade_difference_b" />
+          <ScalarProperty Name="grade_parallelism_a" ColumnName="grade_parallelism_a" />
+          <ScalarProperty Name="grade_parallelism_b" ColumnName="grade_parallelism_b" />
+          <ScalarProperty Name="grade_curvat_a" ColumnName="grade_curvat_a" />
+          <ScalarProperty Name="grade_curvat_b" ColumnName="grade_curvat_b" />
+          <ScalarProperty Name="grade_curvat_x2_a" ColumnName="grade_curvat_x2_a" />
+          <ScalarProperty Name="grade_curvat_x2_b" ColumnName="grade_curvat_x2_b" />
+          <ScalarProperty Name="grade_ortogon" ColumnName="grade_ortogon" />
+          <ScalarProperty Name="grade_calibre" ColumnName="grade_calibre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tile_group">
+      <EntityTypeMapping TypeName="database_planarModel.tile_group">
+        <MappingFragment StoreEntitySet="tile_group">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="id_planar_config" ColumnName="id_planar_config" />
+          <ScalarProperty Name="id_calibre_config" ColumnName="id_calibre_config" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tile_planar_details">
+      <EntityTypeMapping TypeName="database_planarModel.tile_planar_details">
+        <MappingFragment StoreEntitySet="tile_planar_details">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="curvcenter" ColumnName="curvcenter" />
+          <ScalarProperty Name="curv_a" ColumnName="curv_a" />
+          <ScalarProperty Name="curv_b" ColumnName="curv_b" />
+          <ScalarProperty Name="twist" ColumnName="twist" />
+          <ScalarProperty Name="contrd" ColumnName="contrd" />
+          <ScalarProperty Name="corner_p" ColumnName="corner_p" />
+          <ScalarProperty Name="corner_n" ColumnName="corner_n" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tile_planar_grade">
+      <EntityTypeMapping TypeName="database_planarModel.tile_planar_grade">
+        <MappingFragment StoreEntitySet="tile_planar_grade">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="time_stamp" ColumnName="time_stamp" />
+          <ScalarProperty Name="grade_curvcenter" ColumnName="grade_curvcenter" />
+          <ScalarProperty Name="grade_curv_a" ColumnName="grade_curv_a" />
+          <ScalarProperty Name="grade_curv_b" ColumnName="grade_curv_b" />
+          <ScalarProperty Name="grade_twist" ColumnName="grade_twist" />
+          <ScalarProperty Name="grade_contrd" ColumnName="grade_contrd" />
+          <ScalarProperty Name="grade_corner" ColumnName="grade_corner" />
+          <ScalarProperty Name="grade_planar" ColumnName="grade_planar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="database_planarModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="database_planarModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="database_planarModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="database_planarModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="database_planarModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="database_planarModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="database_planarModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="database_planarModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="database_planarModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

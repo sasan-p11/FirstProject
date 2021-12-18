@@ -29,6 +29,11 @@ namespace FirstProject
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Telerik.WinControls.UI.CartesianArea cartesianArea1 = new Telerik.WinControls.UI.CartesianArea();
+            Telerik.WinControls.UI.CategoricalAxis categoricalAxis1 = new Telerik.WinControls.UI.CategoricalAxis();
+            Telerik.WinControls.UI.LinearAxis linearAxis1 = new Telerik.WinControls.UI.LinearAxis();
+            Telerik.WinControls.UI.BarSeries barSeries1 = new Telerik.WinControls.UI.BarSeries();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.UserId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +51,7 @@ namespace FirstProject
             this.lblFilterAge = new Telerik.WinControls.UI.RadLabel();
             this.tabRegisterUser = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnExpotExcel = new Telerik.WinControls.UI.RadButton();
             this.rdoFilterRegsiterDate = new Telerik.WinControls.UI.RadRadioButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnRegister = new Telerik.WinControls.UI.RadButton();
@@ -61,7 +67,11 @@ namespace FirstProject
             this.lblFamily = new Telerik.WinControls.UI.RadLabel();
             this.txtFirstName = new Telerik.WinControls.UI.RadTextBox();
             this.lblFirstName = new Telerik.WinControls.UI.RadLabel();
-            this.btnExpotExcel = new Telerik.WinControls.UI.RadButton();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.radChart = new Telerik.WinControls.UI.RadChartView();
+            this.database_planarDataSet = new FirstProject.database_planarDataSet();
+            this.tilecalibregradeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tile_calibre_gradeTableAdapter = new FirstProject.database_planarDataSetTableAdapters.tile_calibre_gradeTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFilteGender)).BeginInit();
@@ -71,6 +81,7 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.lblFilterAge)).BeginInit();
             this.tabRegisterUser.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpotExcel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnRegister)).BeginInit();
@@ -86,7 +97,10 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.lblFamily)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExpotExcel)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radChart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_planarDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tilecalibregradeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -199,6 +213,7 @@ namespace FirstProject
             // 
             this.tabRegisterUser.Controls.Add(this.tabPage1);
             this.tabRegisterUser.Controls.Add(this.tabPage2);
+            this.tabRegisterUser.Controls.Add(this.tabPage3);
             this.tabRegisterUser.Location = new System.Drawing.Point(12, 12);
             this.tabRegisterUser.Name = "tabRegisterUser";
             this.tabRegisterUser.SelectedIndex = 0;
@@ -223,6 +238,15 @@ namespace FirstProject
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnExpotExcel
+            // 
+            this.btnExpotExcel.Location = new System.Drawing.Point(283, 271);
+            this.btnExpotExcel.Name = "btnExpotExcel";
+            this.btnExpotExcel.Size = new System.Drawing.Size(135, 34);
+            this.btnExpotExcel.TabIndex = 8;
+            this.btnExpotExcel.Text = "Export Excel";
+            this.btnExpotExcel.Click += new System.EventHandler(this.btnExpotExcel_Click);
             // 
             // rdoFilterRegsiterDate
             // 
@@ -354,14 +378,50 @@ namespace FirstProject
             this.lblFirstName.TabIndex = 0;
             this.lblFirstName.Text = "First Name :";
             // 
-            // btnExpotExcel
+            // tabPage3
             // 
-            this.btnExpotExcel.Location = new System.Drawing.Point(283, 271);
-            this.btnExpotExcel.Name = "btnExpotExcel";
-            this.btnExpotExcel.Size = new System.Drawing.Size(135, 34);
-            this.btnExpotExcel.TabIndex = 8;
-            this.btnExpotExcel.Text = "Export Excel";
-            this.btnExpotExcel.Click += new System.EventHandler(this.btnExpotExcel_Click);
+            this.tabPage3.Controls.Add(this.radChart);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(857, 311);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // radChart
+            // 
+            this.radChart.AreaDesign = cartesianArea1;
+            categoricalAxis1.IsPrimary = true;
+            linearAxis1.AxisType = Telerik.Charting.AxisType.Second;
+            linearAxis1.IsPrimary = true;
+            linearAxis1.TickOrigin = null;
+            this.radChart.Axes.AddRange(new Telerik.WinControls.UI.Axis[] {
+            categoricalAxis1,
+            linearAxis1});
+            this.radChart.Location = new System.Drawing.Point(6, 3);
+            this.radChart.Name = "radChart";
+            barSeries1.HorizontalAxis = categoricalAxis1;
+            barSeries1.VerticalAxis = linearAxis1;
+            this.radChart.Series.AddRange(new Telerik.WinControls.UI.ChartSeries[] {
+            barSeries1});
+            this.radChart.ShowGrid = false;
+            this.radChart.Size = new System.Drawing.Size(480, 302);
+            this.radChart.TabIndex = 0;
+            // 
+            // database_planarDataSet
+            // 
+            this.database_planarDataSet.DataSetName = "database_planarDataSet";
+            this.database_planarDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tilecalibregradeBindingSource
+            // 
+            this.tilecalibregradeBindingSource.DataMember = "tile_calibre_grade";
+            this.tilecalibregradeBindingSource.DataSource = this.database_planarDataSet;
+            // 
+            // tile_calibre_gradeTableAdapter
+            // 
+            this.tile_calibre_gradeTableAdapter.ClearBeforeFill = true;
             // 
             // RadForm1
             // 
@@ -383,6 +443,7 @@ namespace FirstProject
             this.tabRegisterUser.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnExpotExcel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rdoFilterRegsiterDate)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
@@ -399,7 +460,10 @@ namespace FirstProject
             ((System.ComponentModel.ISupportInitialize)(this.lblFamily)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtFirstName)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblFirstName)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnExpotExcel)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.radChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.database_planarDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tilecalibregradeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -441,5 +505,10 @@ namespace FirstProject
         private Telerik.WinControls.UI.RadButton btnRegister;
         private Telerik.WinControls.UI.RadRadioButton rdoFilterRegsiterDate;
         private Telerik.WinControls.UI.RadButton btnExpotExcel;
+        private System.Windows.Forms.TabPage tabPage3;
+        private Telerik.WinControls.UI.RadChartView radChart;
+        private database_planarDataSet database_planarDataSet;
+        private System.Windows.Forms.BindingSource tilecalibregradeBindingSource;
+        private database_planarDataSetTableAdapters.tile_calibre_gradeTableAdapter tile_calibre_gradeTableAdapter;
     }
 }

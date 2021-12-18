@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="44e94dfd734f47c6b29c69ff75528926" Name="Diagram1" ZoomLevel="84">
+        <EntityTypeShape EntityType="database_planarModel.access" Width="1.5" PointX="5.25" PointY="24.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.account" Width="1.5" PointX="3" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.config_calibre" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.config_planar" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.connect_calibre_config" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.connect_planar_config" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.error" Width="1.5" PointX="9.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.grade" Width="1.5" PointX="5.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.sysdiagram" Width="1.5" PointX="7.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.tile" Width="1.5" PointX="7.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.tile_calibre_details" Width="1.5" PointX="5.25" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.tile_calibre_grade" Width="1.5" PointX="5.25" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.tile_group" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.tile_planar_details" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="database_planarModel.tile_planar_grade" Width="1.5" PointX="5.25" PointY="20.25" IsExpanded="true" />
+        <AssociationConnector Association="database_planarModel.FK__access__id_user__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile_grou__id_us__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_c__id_ca__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__connect_p__id_pl__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile_grou__id_ca__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile_grou__id_pl__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__error__id_tile__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile__id_grade__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile__id_calibre__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile__id_calibre__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile__id_g__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile__id_planar___4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="database_planarModel.FK__tile__id_planar___4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

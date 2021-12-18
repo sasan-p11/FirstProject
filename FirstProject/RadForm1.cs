@@ -11,12 +11,15 @@ using System.Reflection;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
+using Telerik.Charting;
+using Telerik.WinControls.UI;
 
 namespace FirstProject
 {
     public partial class RadForm1 : Telerik.WinControls.UI.RadForm
     {
         private Entities entities = new Entities();
+        private Planer planerEntity = new Planer();
         private static readonly log4net.ILog log
      = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public RadForm1()
@@ -26,6 +29,18 @@ namespace FirstProject
         }
         private void RadForm1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'database_planarDataSet.tile_calibre_grade' table. You can move, or remove it, as needed.
+            this.tile_calibre_gradeTableAdapter.Fill(this.database_planarDataSet.tile_calibre_grade);
+            // TODO: This line of code loads data into the 'database_planarDataSet.error' table. You can move, or remove it, as needed.
+          //  this.errorTableAdapter.Fill(this.database_planarDataSet.error);
+            // TODO: This line of code loads data into the 'database_planarDataSet.tile' table. You can move, or remove it, as needed.
+           // this.tileTableAdapter.Fill(this.database_planarDataSet.tile);
+            // TODO: This line of code loads data into the 'database_planarDataSet.tile_calibre_grade' table. You can move, or remove it, as needed.
+            this.tile_calibre_gradeTableAdapter.Fill(this.database_planarDataSet.tile_calibre_grade);
+            // TODO: This line of code loads data into the 'database_planarDataSet.tile' table. You can move, or remove it, as needed.
+         //   this.tileTableAdapter.Fill(this.database_planarDataSet.tile);
+            // TODO: This line of code loads data into the 'database_planarDataSet.tile_calibre_grade' table. You can move, or remove it, as needed.
+            this.tile_calibre_gradeTableAdapter.Fill(this.database_planarDataSet.tile_calibre_grade);
             log.Info("RadForm1_load is run!!!");
 
             //var users = entities.User.Select(c => c).ToList();
@@ -47,6 +62,17 @@ namespace FirstProject
                 dataGridView2.Rows.Add(item.UserId, item.Gender, item.FirstName, item.Family, item.Age,
                                                item.RegisterDate, item.Login.UserName, item.Login.Password);
             }
+
+            var grade4 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 4).Count();
+            var grade3 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 3).Count();
+            var grade2 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 2).Count();
+            var grade1 = planerEntity.tile_calibre_grade.Where(x => x.grade_calibre == 1).Count();
+            BarSeries gradeSeries = new BarSeries();
+            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade4 ,"grade4"));
+            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade3,"grade3"));
+            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade2,"grade1"));
+            gradeSeries.DataPoints.Add(new CategoricalDataPoint(grade1,"grade2"));
+            this.radChart.Series.Add(gradeSeries);
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -384,12 +410,5 @@ namespace FirstProject
             dt.Rows.Add(total);
             return dt;
         }
-        //private void CreateFileLog()
-        //{
-        //    XmlDocument log4netConfig = new XmlDocument();
-        //    log4netConfig.Load(File.OpenRead("log4net.config"));
-        //    var repo = log4net.LogManager.CreateRepository(Assembly.GetEntryAssembly(), typeof(log4net.Repository.Hierarchy.Hierarchy));
-        //    log4net.Config.XmlConfigurator.Configure(repo, log4netConfig["log4net"]);
-        //}
     }
 }

@@ -36,3 +36,5 @@ C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Microsoft.mshtml.d
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.License.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.Pdf.xml
 C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Spire.XLS.xml
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControls.ChartView.dll
+C:\Users\mahrayan\Desktop\FirstProject\FirstProject\bin\Debug\Telerik.WinControls.ChartView.xml

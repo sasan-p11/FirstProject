@@ -1,0 +1,641 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="database_planarModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="access">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="access_config" Type="bit" />
+    <Property Name="name_access_config" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="account">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fisrt_name" Type="nvarchar(max)" />
+    <Property Name="last_name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="config_calibre">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+    <Property Name="difference_a" Type="float" Nullable="false" />
+    <Property Name="difference_b" Type="float" Nullable="false" />
+    <Property Name="parallelism_a" Type="float" Nullable="false" />
+    <Property Name="Parallelism_b" Type="float" Nullable="false" />
+    <Property Name="curvat_a" Type="float" Nullable="false" />
+    <Property Name="curvat_b" Type="float" Nullable="false" />
+    <Property Name="curvat_x2_a" Type="float" Nullable="false" />
+    <Property Name="curvat_x2_b" Type="float" Nullable="false" />
+    <Property Name="ortogon" Type="float" Nullable="false" />
+    <Property Name="grade_config" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="config_planar">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+    <Property Name="curvcenter_c" Type="float" Nullable="false" />
+    <Property Name="curvcenter_v" Type="float" Nullable="false" />
+    <Property Name="curv_av" Type="float" Nullable="false" />
+    <Property Name="curv_bv" Type="float" Nullable="false" />
+    <Property Name="curv_ac" Type="float" Nullable="false" />
+    <Property Name="curv_bc" Type="float" Nullable="false" />
+    <Property Name="twist" Type="float" Nullable="false" />
+    <Property Name="contrd" Type="float" Nullable="false" />
+    <Property Name="corner_p" Type="float" Nullable="false" />
+    <Property Name="corner_n" Type="float" Nullable="false" />
+    <Property Name="grade_config" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="connect_calibre_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_calibre_config_1" Type="int" Nullable="false" />
+    <Property Name="id_calibre_config_2" Type="int" Nullable="false" />
+    <Property Name="id_calibre_config_3" Type="int" Nullable="false" />
+    <Property Name="id_calibre_config_4" Type="int" />
+    <Property Name="id_calibre_config_5" Type="int" />
+    <Property Name="id_calibre_config_6" Type="int" />
+    <Property Name="id_calibre_config_7" Type="int" />
+  </EntityType>
+  <EntityType Name="connect_planar_config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_planar_config_1" Type="int" Nullable="false" />
+    <Property Name="id_planar_config_2" Type="int" Nullable="false" />
+    <Property Name="id_planar_config_3" Type="int" Nullable="false" />
+    <Property Name="id_planar_config_4" Type="int" />
+    <Property Name="id_planar_config_5" Type="int" />
+    <Property Name="id_planar_config_6" Type="int" />
+    <Property Name="id_planar_config_7" Type="int" />
+  </EntityType>
+  <EntityType Name="error">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar(max)" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="type_error" Type="nvarchar" MaxLength="50" />
+    <Property Name="id_tile" Type="int" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="grade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="grade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tile">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="id_g" Type="int" Nullable="false" />
+    <Property Name="id_planar_details" Type="int" Nullable="false" />
+    <Property Name="id_calibre_details" Type="int" Nullable="false" />
+    <Property Name="id_planar_grade" Type="int" Nullable="false" />
+    <Property Name="id_calibre_grade" Type="int" Nullable="false" />
+    <Property Name="id_grade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tile_calibre_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+    <Property Name="difference_a" Type="float" Nullable="false" />
+    <Property Name="difference_b" Type="float" Nullable="false" />
+    <Property Name="parallelism_a" Type="float" Nullable="false" />
+    <Property Name="parallelism_b" Type="float" Nullable="false" />
+    <Property Name="curvat_a" Type="float" Nullable="false" />
+    <Property Name="curvat_b" Type="float" Nullable="false" />
+    <Property Name="curvat_x2_a" Type="float" Nullable="false" />
+    <Property Name="curvat_x2_b" Type="float" Nullable="false" />
+    <Property Name="ortogon" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tile_calibre_grade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+    <Property Name="grade_difference_a" Type="int" Nullable="false" />
+    <Property Name="grade_difference_b" Type="int" Nullable="false" />
+    <Property Name="grade_parallelism_a" Type="int" Nullable="false" />
+    <Property Name="grade_parallelism_b" Type="int" Nullable="false" />
+    <Property Name="grade_curvat_a" Type="int" Nullable="false" />
+    <Property Name="grade_curvat_b" Type="int" Nullable="false" />
+    <Property Name="grade_curvat_x2_a" Type="int" Nullable="false" />
+    <Property Name="grade_curvat_x2_b" Type="int" Nullable="false" />
+    <Property Name="grade_ortogon" Type="int" Nullable="false" />
+    <Property Name="grade_calibre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tile_group">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_user" Type="int" Nullable="false" />
+    <Property Name="id_planar_config" Type="int" Nullable="false" />
+    <Property Name="id_calibre_config" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tile_planar_details">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+    <Property Name="curvcenter" Type="float" Nullable="false" />
+    <Property Name="curv_a" Type="float" Nullable="false" />
+    <Property Name="curv_b" Type="float" Nullable="false" />
+    <Property Name="twist" Type="float" Nullable="false" />
+    <Property Name="contrd" Type="float" Nullable="false" />
+    <Property Name="corner_p" Type="float" Nullable="false" />
+    <Property Name="corner_n" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tile_planar_grade">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="time_stamp" Type="datetime" Nullable="false" />
+    <Property Name="grade_curvcenter" Type="int" Nullable="false" />
+    <Property Name="grade_curv_a" Type="int" Nullable="false" />
+    <Property Name="grade_curv_b" Type="int" Nullable="false" />
+    <Property Name="grade_twist" Type="int" Nullable="false" />
+    <Property Name="grade_contrd" Type="int" Nullable="false" />
+    <Property Name="grade_corner" Type="int" Nullable="false" />
+    <Property Name="grade_planar" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__access__id_user__267ABA7A">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="access" Type="Self.access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="access">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__36B12243">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__37A5467C">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__38996AB5">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__398D8EEE">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="0..1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__3A81B327">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="0..1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__3B75D760">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="0..1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_6" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_c__id_ca__3C69FB99">
+    <End Role="config_calibre" Type="Self.config_calibre" Multiplicity="0..1" />
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_calibre">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_calibre_config">
+        <PropertyRef Name="id_calibre_config_7" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__3F466844">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__403A8C7D">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_2" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__412EB0B6">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_3" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__4222D4EF">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="0..1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_4" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__4316F928">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="0..1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_5" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__440B1D61">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="0..1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_6" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__connect_p__id_pl__44FF419A">
+    <End Role="config_planar" Type="Self.config_planar" Multiplicity="0..1" />
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="config_planar">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="connect_planar_config">
+        <PropertyRef Name="id_planar_config_7" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__error__id_tile__5441852A">
+    <End Role="tile" Type="Self.tile" Multiplicity="1" />
+    <End Role="error" Type="Self.error" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tile">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="error">
+        <PropertyRef Name="id_tile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile__id_calibre__4E88ABD4">
+    <End Role="tile_calibre_details" Type="Self.tile_calibre_details" Multiplicity="1" />
+    <End Role="tile" Type="Self.tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tile_calibre_details">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile">
+        <PropertyRef Name="id_calibre_details" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile__id_calibre__5070F446">
+    <End Role="tile_calibre_grade" Type="Self.tile_calibre_grade" Multiplicity="1" />
+    <End Role="tile" Type="Self.tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tile_calibre_grade">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile">
+        <PropertyRef Name="id_calibre_grade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile__id_g__4CA06362">
+    <End Role="tile_group" Type="Self.tile_group" Multiplicity="1" />
+    <End Role="tile" Type="Self.tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tile_group">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile">
+        <PropertyRef Name="id_g" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile__id_grade__5165187F">
+    <End Role="grade" Type="Self.grade" Multiplicity="1" />
+    <End Role="tile" Type="Self.tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="grade">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile">
+        <PropertyRef Name="id_grade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile__id_planar___4D94879B">
+    <End Role="tile_planar_details" Type="Self.tile_planar_details" Multiplicity="1" />
+    <End Role="tile" Type="Self.tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tile_planar_details">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile">
+        <PropertyRef Name="id_planar_details" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile__id_planar___4F7CD00D">
+    <End Role="tile_planar_grade" Type="Self.tile_planar_grade" Multiplicity="1" />
+    <End Role="tile" Type="Self.tile" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tile_planar_grade">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile">
+        <PropertyRef Name="id_planar_grade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile_grou__id_ca__49C3F6B7">
+    <End Role="connect_calibre_config" Type="Self.connect_calibre_config" Multiplicity="1" />
+    <End Role="tile_group" Type="Self.tile_group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="connect_calibre_config">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile_group">
+        <PropertyRef Name="id_calibre_config" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile_grou__id_pl__48CFD27E">
+    <End Role="connect_planar_config" Type="Self.connect_planar_config" Multiplicity="1" />
+    <End Role="tile_group" Type="Self.tile_group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="connect_planar_config">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile_group">
+        <PropertyRef Name="id_planar_config" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tile_grou__id_us__47DBAE45">
+    <End Role="account" Type="Self.account" Multiplicity="1" />
+    <End Role="tile_group" Type="Self.tile_group" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="account">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tile_group">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="database_planarModelStoreContainer">
+    <EntitySet Name="access" EntityType="Self.access" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="account" EntityType="Self.account" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="config_calibre" EntityType="Self.config_calibre" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="config_planar" EntityType="Self.config_planar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="connect_calibre_config" EntityType="Self.connect_calibre_config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="connect_planar_config" EntityType="Self.connect_planar_config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="error" EntityType="Self.error" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="grade" EntityType="Self.grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tile" EntityType="Self.tile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tile_calibre_details" EntityType="Self.tile_calibre_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tile_calibre_grade" EntityType="Self.tile_calibre_grade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tile_group" EntityType="Self.tile_group" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tile_planar_details" EntityType="Self.tile_planar_details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tile_planar_grade" EntityType="Self.tile_planar_grade" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__access__id_user__267ABA7A" Association="Self.FK__access__id_user__267ABA7A">
+      <End Role="account" EntitySet="account" />
+      <End Role="access" EntitySet="access" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__36B12243" Association="Self.FK__connect_c__id_ca__36B12243">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__37A5467C" Association="Self.FK__connect_c__id_ca__37A5467C">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__38996AB5" Association="Self.FK__connect_c__id_ca__38996AB5">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__398D8EEE" Association="Self.FK__connect_c__id_ca__398D8EEE">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__3A81B327" Association="Self.FK__connect_c__id_ca__3A81B327">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__3B75D760" Association="Self.FK__connect_c__id_ca__3B75D760">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_c__id_ca__3C69FB99" Association="Self.FK__connect_c__id_ca__3C69FB99">
+      <End Role="config_calibre" EntitySet="config_calibre" />
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__3F466844" Association="Self.FK__connect_p__id_pl__3F466844">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__403A8C7D" Association="Self.FK__connect_p__id_pl__403A8C7D">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__412EB0B6" Association="Self.FK__connect_p__id_pl__412EB0B6">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__4222D4EF" Association="Self.FK__connect_p__id_pl__4222D4EF">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__4316F928" Association="Self.FK__connect_p__id_pl__4316F928">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__440B1D61" Association="Self.FK__connect_p__id_pl__440B1D61">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__connect_p__id_pl__44FF419A" Association="Self.FK__connect_p__id_pl__44FF419A">
+      <End Role="config_planar" EntitySet="config_planar" />
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+    </AssociationSet>
+    <AssociationSet Name="FK__error__id_tile__5441852A" Association="Self.FK__error__id_tile__5441852A">
+      <End Role="tile" EntitySet="tile" />
+      <End Role="error" EntitySet="error" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile__id_calibre__4E88ABD4" Association="Self.FK__tile__id_calibre__4E88ABD4">
+      <End Role="tile_calibre_details" EntitySet="tile_calibre_details" />
+      <End Role="tile" EntitySet="tile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile__id_calibre__5070F446" Association="Self.FK__tile__id_calibre__5070F446">
+      <End Role="tile_calibre_grade" EntitySet="tile_calibre_grade" />
+      <End Role="tile" EntitySet="tile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile__id_g__4CA06362" Association="Self.FK__tile__id_g__4CA06362">
+      <End Role="tile_group" EntitySet="tile_group" />
+      <End Role="tile" EntitySet="tile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile__id_grade__5165187F" Association="Self.FK__tile__id_grade__5165187F">
+      <End Role="grade" EntitySet="grade" />
+      <End Role="tile" EntitySet="tile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile__id_planar___4D94879B" Association="Self.FK__tile__id_planar___4D94879B">
+      <End Role="tile_planar_details" EntitySet="tile_planar_details" />
+      <End Role="tile" EntitySet="tile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile__id_planar___4F7CD00D" Association="Self.FK__tile__id_planar___4F7CD00D">
+      <End Role="tile_planar_grade" EntitySet="tile_planar_grade" />
+      <End Role="tile" EntitySet="tile" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile_grou__id_ca__49C3F6B7" Association="Self.FK__tile_grou__id_ca__49C3F6B7">
+      <End Role="connect_calibre_config" EntitySet="connect_calibre_config" />
+      <End Role="tile_group" EntitySet="tile_group" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile_grou__id_pl__48CFD27E" Association="Self.FK__tile_grou__id_pl__48CFD27E">
+      <End Role="connect_planar_config" EntitySet="connect_planar_config" />
+      <End Role="tile_group" EntitySet="tile_group" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tile_grou__id_us__47DBAE45" Association="Self.FK__tile_grou__id_us__47DBAE45">
+      <End Role="account" EntitySet="account" />
+      <End Role="tile_group" EntitySet="tile_group" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
